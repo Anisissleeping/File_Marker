@@ -13,6 +13,8 @@ cur.execute("""CREATE TABLE IF NOT EXISTS file_info(
                  is_marked INTEGER NOT NULL, 
                  last_seen TEXT )""")
 conn.commit()
+
+
 def file_prober():
         dis=True
         subf=True   
@@ -51,19 +53,26 @@ def file_prober():
                current_folder=current_folder.parent
             else:
               current_folder=current_folder / selected_folder
+
               print(f"PATH: {current_folder}")
               print(f"IS FILE: {current_folder.is_file()}")
+
               if current_folder.is_file():
                  current_file=current_folder
+
                  dis=False
                  subf=False
                  print("File has been selected successfully!")
+
                  print("What would you like to call it : ")
+
                  nick=input()
                  print("Are you sure (y/n)")
+
                  nick_sure=input()
                  name_value=nick
-                 path_value=current_file
+
+                 path_value=str(current_file)
                  marked_value=1
                  last_seen_value = datetime.now().isoformat()
                  
@@ -76,16 +85,36 @@ def file_prober():
                                       marked_value,
                                       last_seen_value))
                     conn.commit()
-                    break
-                 elif nick_sure.strip().lower()=="n":
-                    print("User has cancelled the marking procedure!")
-                    break
-                 else:
-                    print("Inalid Response please choose a correct option")
-                 
 
-                 return
+                    file_path=current_folder
 
-                 
+                    result = subprocess.run(
+                    ["fsutil", "file", "queryfileid", str(current_file)],
+                    capture_output=True,
+                    text=True)
 
+                    print(result.stdout)
+
+                    print(f"Return code : {result.returncode}")
+
+                    vopa=drive_selection.rstrip("\\")
+
+                    volume_path=rf"\\.\{vopa}"
+
+                    print("Volume path : ",volume_path)
+
+                    cmd=["fzf",
+                         "--prompt=Do you want to open the file ? "]
+                    file_open=subprocess.run(cmd,
+                                   input="\nYes\nNo",
+                                   text=True,
+                                   capture_output=True)
+                    if file_open.returncode==0:
+                     if file_open.stdout.strip()=="Yes":
+                       subprocess.run([
+                         "explorer.exe",
+                         "/select,",
+                         str(current_file.resolve())
+])
+                    
 file_prober()
