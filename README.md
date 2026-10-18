@@ -1,4 +1,5 @@
 # File_Marker
+
 FileMarker is a local file indexing designed to make users' oh-so-important files easier to store like add entries only for now
 Uses python and sqlite3 and some batch script(larping)
 Use the run.bat file and is program also has some external libraries and also python path should be configured otherwise you have to download the libraries in cmd using commands in cmd and then go to file editor
@@ -21,3 +22,20 @@ View File Prompt
 View File Output
 
 <img width="767" height="111" alt="image" src="https://github.com/user-attachments/assets/03b0482a-4bee-4611-9760-f4a7af6b3ddc" /> 
+
+Getting Started:
+Dependencies:Python(no external third parrty dependencies) and Windows
+
+Installation:
+No Installation, as you will unzip and you can run the .exe and that's it much hassle free
+
+Executing program:
+Same as above I wonder why did I even title Installation maybe because a format is much appreciated
+
+Help:
+I used ChatGPT 4.5 for the idea rest was my own and i used help from people on discord but they criticized my syntax more than actual problems one helpful guy posted a solution for my problem........ yap , also used www.pypi.org for info related to python libraries
+
+License:
+This project is licensed under the General Public License that's right GNU , see the License.md file for details 
+
+That is all , well where was I that's right the helpful guy used linux so he posted a solution i couldn't understand......yap
