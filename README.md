@@ -24,15 +24,23 @@ View File Output
 <img width="767" height="111" alt="image" src="https://github.com/user-attachments/assets/03b0482a-4bee-4611-9760-f4a7af6b3ddc" /> 
 
 Getting Started:
+
+
 Dependencies:Python(no external third parrty dependencies) and Windows
 
 Installation:
+
+
 No Installation, as you will unzip and you can run the .exe and that's it much hassle free
 
 Executing program:
+
+
 Same as above I wonder why did I even title Installation maybe because a format is much appreciated
 
 Help:
+
+
 I used ChatGPT 4.5 for the idea rest was my own and i used help from people on discord but they criticized my syntax more than actual problems one helpful guy posted a solution for my problem........ yap , also used www.pypi.org for info related to python libraries
 
 License:
